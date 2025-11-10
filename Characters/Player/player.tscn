@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://d1edt3v21kw2v"]
+[gd_scene load_steps=39 format=3 uid="uid://d1edt3v21kw2v"]
 
 [ext_resource type="Script" uid="uid://d1ahi1a54yo4b" path="res://Characters/Player/Player.cs" id="1_8hpgr"]
 [ext_resource type="Texture2D" uid="uid://dwdo62x12wrri" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_000.png" id="1_blwrb"]
@@ -31,6 +31,9 @@
 [ext_resource type="Texture2D" uid="uid://d4eubm8wvitgd" path="res://Assets/Sprites/Characters/Player/Running/Running_009.png" id="28_d70mr"]
 [ext_resource type="Texture2D" uid="uid://drfpu7aagb3vc" path="res://Assets/Sprites/Characters/Player/Running/Running_010.png" id="29_qjn0b"]
 [ext_resource type="Texture2D" uid="uid://bpd8vbo8st6ge" path="res://Assets/Sprites/Characters/Player/Running/Running_011.png" id="30_qysuy"]
+[ext_resource type="Script" uid="uid://drardf72e5wh4" path="res://Characters/Player/PlayerIdleState.cs" id="32_12h2v"]
+[ext_resource type="Script" uid="uid://0p0t5vf5dbem" path="res://Characters/Player/PlayerMoveState.cs" id="33_yhbe1"]
+[ext_resource type="Script" uid="uid://1ambm6ufm1es" path="res://Characters/StateMachine.cs" id="34_yhbe1"]
 
 [sub_resource type="Animation" id="Animation_vqjgt"]
 resource_name = "Idle"
@@ -88,13 +91,29 @@ _data = {
 &"RESET": SubResource("Animation_8rp7i")
 }
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("animationPlayer", "_sprite", "stateMachine")]
 script = ExtResource("1_8hpgr")
+animationPlayer = NodePath("AnimationPlayer")
+_sprite = NodePath("Sprite3D")
+stateMachine = NodePath("StateMachine")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+texture_filter = 0
 texture = ExtResource("1_blwrb")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_2ichn")
 }
+autoplay = "Idle"
+
+[node name="IdleState" type="Node" parent="."]
+script = ExtResource("32_12h2v")
+
+[node name="MoveState" type="Node" parent="."]
+script = ExtResource("33_yhbe1")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("currentState", "states")]
+script = ExtResource("34_yhbe1")
+currentState = NodePath("../IdleState")
+states = [NodePath("../IdleState"), NodePath("../MoveState")]
