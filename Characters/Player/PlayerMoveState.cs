@@ -1,35 +1,33 @@
 using Godot;
 using System;
 
-public partial class PlayerMoveState : Node
+public partial class PlayerMoveState : PlayerState
 {
-	private Player characterNode;
-
-	public override void _Ready()
-	{
-		characterNode = GetOwner<Player>();
-	}
-
 	public override void _PhysicsProcess(double delta)
 	{
 		if (characterNode.inputDirection == Vector2.Zero)
 		{
 			characterNode.stateMachine.SwitchState<PlayerIdleState>();
+			return;
 		}
+
+		characterNode.Velocity = new(characterNode.inputDirection.X, 0, characterNode.inputDirection.Y);
+		characterNode.Velocity *= characterNode.MovementSpeed;
+
+		characterNode.Flip();
+		characterNode.MoveAndSlide();
 	}
 
-	public override void _Notification(int what)
-	{
-		base._Notification(what);
-
-		if (what == 5001) // Custom notification for entering state
-		{
-			Run();
-		}
-	}
-
-	private void Run()
+	protected override void OnStateEnter()
 	{
 		characterNode.animationPlayer.Play(Constants.ANIMATION_MOVE);
+	}
+
+	public override void _Input(InputEvent @event)
+	{
+		if (Input.IsActionJustPressed("Dash"))
+		{
+			characterNode.stateMachine.SwitchState<PlayerDashState>();
+		}
 	}
 }
