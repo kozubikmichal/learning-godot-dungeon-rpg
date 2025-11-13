@@ -1,0 +1,263 @@
+[gd_scene load_steps=110 format=3 uid="uid://8gsbej48mvpr"]
+
+[ext_resource type="Texture2D" uid="uid://ivcm5rmh2v2b" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_000.png" id="1_mnpqr"]
+[ext_resource type="Script" uid="uid://c2qhdhu7uy7bc" path="res://Characters/Enemy/Enemy.cs" id="1_wj0ie"]
+[ext_resource type="Texture2D" uid="uid://c2gnd8xk5sbpg" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_001.png" id="2_estl2"]
+[ext_resource type="Texture2D" uid="uid://y8b0quwd01f2" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_002.png" id="3_co8d6"]
+[ext_resource type="Texture2D" uid="uid://tr40r023dif0" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_003.png" id="4_jkmms"]
+[ext_resource type="Texture2D" uid="uid://cikkvr71ukojd" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_004.png" id="5_ue38j"]
+[ext_resource type="Texture2D" uid="uid://duhf6p5iay6au" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_005.png" id="6_7vg1p"]
+[ext_resource type="Texture2D" uid="uid://dy6vlopxvjdvb" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_006.png" id="7_816bs"]
+[ext_resource type="Texture2D" uid="uid://dsxdin5jspuos" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_007.png" id="8_8pyyl"]
+[ext_resource type="Texture2D" uid="uid://dpeahsqra7rkl" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_008.png" id="9_gr1du"]
+[ext_resource type="Texture2D" uid="uid://bc8rhgglucwuf" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_009.png" id="10_4upyb"]
+[ext_resource type="Texture2D" uid="uid://dksdr37w1p0hb" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_010.png" id="11_gbmow"]
+[ext_resource type="Texture2D" uid="uid://dselel83ff1g0" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_011.png" id="12_8da3t"]
+[ext_resource type="Texture2D" uid="uid://bnpio4i7khcnh" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_012.png" id="13_wju01"]
+[ext_resource type="Texture2D" uid="uid://b3i2pjf1nhm7g" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_013.png" id="14_lgqum"]
+[ext_resource type="Texture2D" uid="uid://b5x4g1uf4woo7" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_014.png" id="15_jdctu"]
+[ext_resource type="Texture2D" uid="uid://ckommqnv0va0v" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_015.png" id="16_lt0wp"]
+[ext_resource type="Texture2D" uid="uid://dwq5wfo10rq6k" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_016.png" id="17_pr8ud"]
+[ext_resource type="Texture2D" uid="uid://bxmdv0lkyxjlh" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_017.png" id="18_red52"]
+[ext_resource type="Texture2D" uid="uid://d367r5q8c68eq" path="res://Assets/Sprites/Characters/Enemy Knight/Move/0_Demons_of_Darkness_Walking_000.png" id="19_8xtio"]
+[ext_resource type="Texture2D" uid="uid://wrr00aiycndh" path="res://Assets/Sprites/Characters/Enemy Knight/Move/0_Demons_of_Darkness_Walking_001.png" id="20_8h0b1"]
+[ext_resource type="Texture2D" uid="uid://do5t375tar222" path="res://Assets/Sprites/Characters/Enemy Knight/Move/0_Demons_of_Darkness_Walking_002.png" id="21_vlfgg"]
+[ext_resource type="Texture2D" uid="uid://fb2ojrkcovyh" path="res://Assets/Sprites/Characters/Enemy Knight/Move/0_Demons_of_Darkness_Walking_003.png" id="22_6a1td"]
+[ext_resource type="Texture2D" uid="uid://vpfjcha0dma8" path="res://Assets/Sprites/Characters/Enemy Knight/Move/0_Demons_of_Darkness_Walking_004.png" id="23_feuf8"]
+[ext_resource type="Texture2D" uid="uid://b0skiech6j4w3" path="res://Assets/Sprites/Characters/Enemy Knight/Move/0_Demons_of_Darkness_Walking_005.png" id="24_nvptj"]
+[ext_resource type="Texture2D" uid="uid://d2tvaulvdwy0d" path="res://Assets/Sprites/Characters/Enemy Knight/Move/0_Demons_of_Darkness_Walking_006.png" id="25_bnw5o"]
+[ext_resource type="Texture2D" uid="uid://bqopipop44k3x" path="res://Assets/Sprites/Characters/Enemy Knight/Move/0_Demons_of_Darkness_Walking_007.png" id="26_sbbhf"]
+[ext_resource type="Texture2D" uid="uid://dc02tsi02kgov" path="res://Assets/Sprites/Characters/Enemy Knight/Move/0_Demons_of_Darkness_Walking_008.png" id="27_ykqbo"]
+[ext_resource type="Texture2D" uid="uid://bv0tgjhpt7o1a" path="res://Assets/Sprites/Characters/Enemy Knight/Move/0_Demons_of_Darkness_Walking_009.png" id="28_cl6di"]
+[ext_resource type="Texture2D" uid="uid://b44am6k4pn7pg" path="res://Assets/Sprites/Characters/Enemy Knight/Move/0_Demons_of_Darkness_Walking_010.png" id="29_qnpob"]
+[ext_resource type="Texture2D" uid="uid://8ribxb5cpial" path="res://Assets/Sprites/Characters/Enemy Knight/Move/0_Demons_of_Darkness_Walking_011.png" id="30_cu1rc"]
+[ext_resource type="Texture2D" uid="uid://0kgme3fap6l7" path="res://Assets/Sprites/Characters/Enemy Knight/Move/0_Demons_of_Darkness_Walking_012.png" id="31_uawpp"]
+[ext_resource type="Texture2D" uid="uid://bvyjmsafdo5ll" path="res://Assets/Sprites/Characters/Enemy Knight/Move/0_Demons_of_Darkness_Walking_013.png" id="32_ra2dh"]
+[ext_resource type="Texture2D" uid="uid://dtkh1wor07j8t" path="res://Assets/Sprites/Characters/Enemy Knight/Move/0_Demons_of_Darkness_Walking_014.png" id="33_e2xwo"]
+[ext_resource type="Texture2D" uid="uid://da4skom5cv53f" path="res://Assets/Sprites/Characters/Enemy Knight/Move/0_Demons_of_Darkness_Walking_015.png" id="34_v4hqd"]
+[ext_resource type="Texture2D" uid="uid://copkoke5yl2a3" path="res://Assets/Sprites/Characters/Enemy Knight/Move/0_Demons_of_Darkness_Walking_016.png" id="35_w6p74"]
+[ext_resource type="Texture2D" uid="uid://du84vbuf1a847" path="res://Assets/Sprites/Characters/Enemy Knight/Move/0_Demons_of_Darkness_Walking_017.png" id="36_wm65l"]
+[ext_resource type="Texture2D" uid="uid://cd1q01cxbwekh" path="res://Assets/Sprites/Characters/Enemy Knight/Move/0_Demons_of_Darkness_Walking_018.png" id="37_g8tqi"]
+[ext_resource type="Texture2D" uid="uid://cxcuso2i4o6cl" path="res://Assets/Sprites/Characters/Enemy Knight/Move/0_Demons_of_Darkness_Walking_019.png" id="38_aq4ry"]
+[ext_resource type="Texture2D" uid="uid://c4fw16yeu3ljs" path="res://Assets/Sprites/Characters/Enemy Knight/Move/0_Demons_of_Darkness_Walking_020.png" id="39_lh184"]
+[ext_resource type="Texture2D" uid="uid://ywxw05efaxqr" path="res://Assets/Sprites/Characters/Enemy Knight/Move/0_Demons_of_Darkness_Walking_021.png" id="40_guek4"]
+[ext_resource type="Texture2D" uid="uid://dlva58nps8kgc" path="res://Assets/Sprites/Characters/Enemy Knight/Move/0_Demons_of_Darkness_Walking_022.png" id="41_b3wse"]
+[ext_resource type="Texture2D" uid="uid://bjhw1o60elhnw" path="res://Assets/Sprites/Characters/Enemy Knight/Move/0_Demons_of_Darkness_Walking_023.png" id="42_oplud"]
+[ext_resource type="Texture2D" uid="uid://bxp1dvoqc0vvt" path="res://Assets/Sprites/Characters/Enemy Knight/Attack/0_Demons_of_Darkness_Slashing_000.png" id="43_wju01"]
+[ext_resource type="Texture2D" uid="uid://8muid83derbk" path="res://Assets/Sprites/Characters/Enemy Knight/Attack/0_Demons_of_Darkness_Slashing_001.png" id="44_lgqum"]
+[ext_resource type="Texture2D" uid="uid://heeu263o48fo" path="res://Assets/Sprites/Characters/Enemy Knight/Attack/0_Demons_of_Darkness_Slashing_002.png" id="45_jdctu"]
+[ext_resource type="Texture2D" uid="uid://beja7rws4wf2w" path="res://Assets/Sprites/Characters/Enemy Knight/Attack/0_Demons_of_Darkness_Slashing_003.png" id="46_lt0wp"]
+[ext_resource type="Texture2D" uid="uid://dvl1e1pgcie5c" path="res://Assets/Sprites/Characters/Enemy Knight/Attack/0_Demons_of_Darkness_Slashing_004.png" id="47_pr8ud"]
+[ext_resource type="Texture2D" uid="uid://ds1bse5a0ulvq" path="res://Assets/Sprites/Characters/Enemy Knight/Attack/0_Demons_of_Darkness_Slashing_005.png" id="48_red52"]
+[ext_resource type="Texture2D" uid="uid://bsedt7q26xd3y" path="res://Assets/Sprites/Characters/Enemy Knight/Attack/0_Demons_of_Darkness_Slashing_006.png" id="49_8xtio"]
+[ext_resource type="Texture2D" uid="uid://dr4droqb6mjrp" path="res://Assets/Sprites/Characters/Enemy Knight/Attack/0_Demons_of_Darkness_Slashing_007.png" id="50_8h0b1"]
+[ext_resource type="Texture2D" uid="uid://bhef4cfdtov0b" path="res://Assets/Sprites/Characters/Enemy Knight/Attack/0_Demons_of_Darkness_Slashing_008.png" id="51_vlfgg"]
+[ext_resource type="Texture2D" uid="uid://7cyaykpllep2" path="res://Assets/Sprites/Characters/Enemy Knight/Attack/0_Demons_of_Darkness_Slashing_009.png" id="52_6a1td"]
+[ext_resource type="Texture2D" uid="uid://be1473fmnwp71" path="res://Assets/Sprites/Characters/Enemy Knight/Attack/0_Demons_of_Darkness_Slashing_010.png" id="53_feuf8"]
+[ext_resource type="Texture2D" uid="uid://b43kr0nl8jeo6" path="res://Assets/Sprites/Characters/Enemy Knight/Attack/0_Demons_of_Darkness_Slashing_011.png" id="54_nvptj"]
+[ext_resource type="Texture2D" uid="uid://cg77vib3edap5" path="res://Assets/Sprites/Characters/Enemy Knight/Death/0_Demons_of_Darkness_Dying_000.png" id="55_cl6di"]
+[ext_resource type="Texture2D" uid="uid://b3qohjsvskrrf" path="res://Assets/Sprites/Characters/Enemy Knight/Death/0_Demons_of_Darkness_Dying_001.png" id="56_qnpob"]
+[ext_resource type="Texture2D" uid="uid://ba78lm0od7ysr" path="res://Assets/Sprites/Characters/Enemy Knight/Death/0_Demons_of_Darkness_Dying_002.png" id="57_cu1rc"]
+[ext_resource type="Texture2D" uid="uid://bque1md4eden4" path="res://Assets/Sprites/Characters/Enemy Knight/Death/0_Demons_of_Darkness_Dying_003.png" id="58_uawpp"]
+[ext_resource type="Texture2D" uid="uid://b7qr2hutunitd" path="res://Assets/Sprites/Characters/Enemy Knight/Death/0_Demons_of_Darkness_Dying_004.png" id="59_ra2dh"]
+[ext_resource type="Texture2D" uid="uid://dckocju7klorg" path="res://Assets/Sprites/Characters/Enemy Knight/Death/0_Demons_of_Darkness_Dying_005.png" id="60_e2xwo"]
+[ext_resource type="Texture2D" uid="uid://c81101e1pdg1r" path="res://Assets/Sprites/Characters/Enemy Knight/Death/0_Demons_of_Darkness_Dying_006.png" id="61_v4hqd"]
+[ext_resource type="Texture2D" uid="uid://cqvneqpecj3wg" path="res://Assets/Sprites/Characters/Enemy Knight/Death/0_Demons_of_Darkness_Dying_007.png" id="62_w6p74"]
+[ext_resource type="Texture2D" uid="uid://whc6gj1tmmmi" path="res://Assets/Sprites/Characters/Enemy Knight/Death/0_Demons_of_Darkness_Dying_008.png" id="63_wm65l"]
+[ext_resource type="Texture2D" uid="uid://dror8rih4poc" path="res://Assets/Sprites/Characters/Enemy Knight/Death/0_Demons_of_Darkness_Dying_009.png" id="64_g8tqi"]
+[ext_resource type="Texture2D" uid="uid://b14wrmdcjcwbg" path="res://Assets/Sprites/Characters/Enemy Knight/Death/0_Demons_of_Darkness_Dying_010.png" id="65_aq4ry"]
+[ext_resource type="Texture2D" uid="uid://mvn1a7ksv100" path="res://Assets/Sprites/Characters/Enemy Knight/Death/0_Demons_of_Darkness_Dying_011.png" id="66_lh184"]
+[ext_resource type="Texture2D" uid="uid://b82cwsy5w376r" path="res://Assets/Sprites/Characters/Enemy Knight/Death/0_Demons_of_Darkness_Dying_012.png" id="67_guek4"]
+[ext_resource type="Texture2D" uid="uid://cdh40crdaam61" path="res://Assets/Sprites/Characters/Enemy Knight/Death/0_Demons_of_Darkness_Dying_013.png" id="68_b3wse"]
+[ext_resource type="Texture2D" uid="uid://b3u6c2mb3fr5e" path="res://Assets/Sprites/Characters/Enemy Knight/Death/smoke-Fx3_0.png" id="69_cd84a"]
+[ext_resource type="Texture2D" uid="uid://b16lwxbrfwypf" path="res://Assets/Sprites/Characters/Enemy Knight/Death/smoke-Fx3_1.png" id="70_dq4gt"]
+[ext_resource type="Texture2D" uid="uid://boc34a6dvai25" path="res://Assets/Sprites/Characters/Enemy Knight/Death/smoke-Fx3_2.png" id="71_fgsh0"]
+[ext_resource type="Texture2D" uid="uid://dqt0wyjadcahb" path="res://Assets/Sprites/Characters/Enemy Knight/Death/smoke-Fx3_3.png" id="72_vuidb"]
+[ext_resource type="Texture2D" uid="uid://bdvjro20jgc3m" path="res://Assets/Sprites/Characters/Enemy Knight/Death/smoke-Fx3_4.png" id="73_2pbmp"]
+[ext_resource type="Texture2D" uid="uid://dmbne71u6fb8a" path="res://Assets/Sprites/Characters/Enemy Knight/Death/smoke-Fx3_5.png" id="74_b5221"]
+[ext_resource type="Texture2D" uid="uid://bsa3enygskjde" path="res://Assets/Sprites/Characters/Enemy Knight/Death/smoke-Fx3_6.png" id="75_psoe1"]
+[ext_resource type="Texture2D" uid="uid://cusha2v56ap2w" path="res://Assets/Sprites/Characters/Enemy Knight/Death/smoke-Fx3_7.png" id="76_mdwep"]
+[ext_resource type="Texture2D" uid="uid://d1rjf8alxfkuo" path="res://Assets/Sprites/Characters/Enemy Knight/Death/smoke-Fx3_8.png" id="77_xav5t"]
+[ext_resource type="Texture2D" uid="uid://sk7o1vnu0ags" path="res://Assets/Sprites/Characters/Enemy Knight/Death/smoke-Fx3_9.png" id="78_omepy"]
+[ext_resource type="Texture2D" uid="uid://dwadpv2wqt626" path="res://Assets/Sprites/Characters/Enemy Knight/Death/smoke-Fx3_10.png" id="79_kev4f"]
+[ext_resource type="Texture2D" uid="uid://hg510oq8uqlv" path="res://Assets/Sprites/Characters/Enemy Knight/Death/smoke-Fx3_11.png" id="80_v5lv4"]
+[ext_resource type="Texture2D" uid="uid://c25dugo7rlub" path="res://Assets/Sprites/Characters/Enemy Knight/Death/smoke-Fx3_12.png" id="81_h2y5e"]
+[ext_resource type="Texture2D" uid="uid://dhvvkwpit3fuj" path="res://Assets/Sprites/Characters/Enemy Knight/Death/smoke-Fx3_13.png" id="82_wihyy"]
+[ext_resource type="Texture2D" uid="uid://bfa52bealumio" path="res://Assets/Sprites/Characters/Enemy Knight/Death/smoke-Fx3_14.png" id="83_pp62w"]
+[ext_resource type="Texture2D" uid="uid://di7l5xyd86h7e" path="res://Assets/Sprites/Characters/Enemy Knight/Death/smoke-Fx3_15.png" id="84_wj0ie"]
+[ext_resource type="Texture2D" uid="uid://c5u8in5vogbn6" path="res://Assets/Sprites/Characters/Enemy Knight/Death/smoke-Fx3_16.png" id="85_r6afy"]
+[ext_resource type="Texture2D" uid="uid://ivpltrt0hdu5" path="res://Assets/Sprites/Characters/Enemy Knight/Death/smoke-Fx3_17.png" id="86_83j71"]
+[ext_resource type="Texture2D" uid="uid://biyp4kti2lc68" path="res://Assets/Sprites/Characters/Enemy Knight/TakeHit/0_Demons_of_Darkness_Hurt_000.png" id="87_h2y5e"]
+[ext_resource type="Texture2D" uid="uid://c0haj5g2ibalt" path="res://Assets/Sprites/Characters/Enemy Knight/TakeHit/0_Demons_of_Darkness_Hurt_001.png" id="88_wihyy"]
+[ext_resource type="Texture2D" uid="uid://bsbrodju5o7vn" path="res://Assets/Sprites/Characters/Enemy Knight/TakeHit/0_Demons_of_Darkness_Hurt_002.png" id="89_pp62w"]
+[ext_resource type="Texture2D" uid="uid://bqk44lo7r0jb1" path="res://Assets/Sprites/Characters/Enemy Knight/TakeHit/0_Demons_of_Darkness_Hurt_003.png" id="90_wj0ie"]
+[ext_resource type="Texture2D" uid="uid://c15rsayn23c10" path="res://Assets/Sprites/Characters/Enemy Knight/TakeHit/0_Demons_of_Darkness_Hurt_004.png" id="91_r6afy"]
+[ext_resource type="Texture2D" uid="uid://cnbqemo3e11x4" path="res://Assets/Sprites/Characters/Enemy Knight/TakeHit/0_Demons_of_Darkness_Hurt_005.png" id="92_83j71"]
+[ext_resource type="Texture2D" uid="uid://t7j8p4xljgcq" path="res://Assets/Sprites/Characters/Enemy Knight/TakeHit/0_Demons_of_Darkness_Hurt_006.png" id="93_ciy6n"]
+[ext_resource type="Texture2D" uid="uid://dh2p64ecarbda" path="res://Assets/Sprites/Characters/Enemy Knight/TakeHit/0_Demons_of_Darkness_Hurt_007.png" id="94_o35oc"]
+[ext_resource type="Texture2D" uid="uid://crdifxbo6fw2p" path="res://Assets/Sprites/Characters/Enemy Knight/TakeHit/0_Demons_of_Darkness_Hurt_008.png" id="95_rt25r"]
+[ext_resource type="Texture2D" uid="uid://er7hh43tafkd" path="res://Assets/Sprites/Characters/Enemy Knight/TakeHit/0_Demons_of_Darkness_Hurt_009.png" id="96_6ojxj"]
+[ext_resource type="Texture2D" uid="uid://dc8m7vbnq1ppw" path="res://Assets/Sprites/Characters/Enemy Knight/TakeHit/0_Demons_of_Darkness_Hurt_010.png" id="97_60x4o"]
+[ext_resource type="Texture2D" uid="uid://cur5qj0njjq5e" path="res://Assets/Sprites/Characters/Enemy Knight/TakeHit/0_Demons_of_Darkness_Hurt_011.png" id="98_d2sm6"]
+[ext_resource type="PackedScene" uid="uid://b3ih4cyuk6jcw" path="res://Characters/state_machine.tscn" id="99_wihyy"]
+[ext_resource type="Script" uid="uid://b7rdfev61ecj0" path="res://Characters/Enemy/EnemyIdleState.cs" id="100_pp62w"]
+
+[sub_resource type="Animation" id="Animation_7a3bx"]
+resource_name = "Idle"
+loop_mode = 1
+step = 0.055555556
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05824215, 0.111761965, 0.16685589, 0.22509804, 0.27704373, 0.33371177, 0.39510214, 0.4501961, 0.5005677, 0.5588098, 0.61705196, 0.66899765, 0.7256657, 0.78233373, 0.8342794, 0.8925216, 0.9476155),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_mnpqr"), ExtResource("2_estl2"), ExtResource("3_co8d6"), ExtResource("4_jkmms"), ExtResource("5_ue38j"), ExtResource("6_7vg1p"), ExtResource("7_816bs"), ExtResource("8_8pyyl"), ExtResource("9_gr1du"), ExtResource("10_4upyb"), ExtResource("11_gbmow"), ExtResource("12_8da3t"), ExtResource("13_wju01"), ExtResource("14_lgqum"), ExtResource("15_jdctu"), ExtResource("16_lt0wp"), ExtResource("17_pr8ud"), ExtResource("18_red52")]
+}
+
+[sub_resource type="Animation" id="Animation_bxjv2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:pixel_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0025]
+}
+
+[sub_resource type="Animation" id="Animation_3cwg6"]
+resource_name = "Move"
+loop_mode = 1
+step = 0.041666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.047223363, 0.08342794, 0.1290772, 0.17000411, 0.21250515, 0.25500616, 0.29278487, 0.33686, 0.3762128, 0.42028794, 0.46121487, 0.5037159, 0.5446428, 0.58556974, 0.6280708, 0.66584945, 0.7067764, 0.7508515, 0.7902043, 0.8358536, 0.87678045, 0.9145592, 0.9570602),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("19_8xtio"), ExtResource("20_8h0b1"), ExtResource("21_vlfgg"), ExtResource("22_6a1td"), ExtResource("23_feuf8"), ExtResource("24_nvptj"), ExtResource("25_bnw5o"), ExtResource("26_sbbhf"), ExtResource("27_ykqbo"), ExtResource("28_cl6di"), ExtResource("29_qnpob"), ExtResource("30_cu1rc"), ExtResource("31_uawpp"), ExtResource("32_ra2dh"), ExtResource("33_e2xwo"), ExtResource("34_v4hqd"), ExtResource("35_w6p74"), ExtResource("36_wm65l"), ExtResource("37_g8tqi"), ExtResource("38_aq4ry"), ExtResource("39_lh184"), ExtResource("40_guek4"), ExtResource("41_b3wse"), ExtResource("42_oplud")]
+}
+
+[sub_resource type="Animation" id="Animation_bnw5o"]
+resource_name = "Attack"
+step = 0.083333336
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.08342794, 0.16843, 0.25500616, 0.3352859, 0.42343616, 0.5037159, 0.5839956, 0.66584945, 0.74455506, 0.827983, 0.92242974),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("43_wju01"), ExtResource("44_lgqum"), ExtResource("45_jdctu"), ExtResource("46_lt0wp"), ExtResource("47_pr8ud"), ExtResource("48_red52"), ExtResource("49_8xtio"), ExtResource("50_8h0b1"), ExtResource("51_vlfgg"), ExtResource("52_6a1td"), ExtResource("53_feuf8"), ExtResource("54_nvptj")]
+}
+
+[sub_resource type="Animation" id="Animation_vqx8j"]
+resource_name = "Death"
+step = 0.030303031
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.030303031, 0.060606062, 0.09090909, 0.121212125, 0.15151516, 0.18181819, 0.21212122, 0.24242425, 0.27272728, 0.3030303, 0.33333334, 0.36363637, 0.3939394, 0.42424244, 0.45806664, 0.4816783, 0.5178829, 0.5446428, 0.5808474, 0.6060332, 0.6375154, 0.66584945, 0.7004799, 0.72881395, 0.75872207, 0.7870561, 0.8181819, 0.8468723, 0.87678045, 0.9082627, 0.9460414),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("55_cl6di"), ExtResource("56_qnpob"), ExtResource("57_cu1rc"), ExtResource("58_uawpp"), ExtResource("59_ra2dh"), ExtResource("60_e2xwo"), ExtResource("61_v4hqd"), ExtResource("62_w6p74"), ExtResource("63_wm65l"), ExtResource("64_g8tqi"), ExtResource("65_aq4ry"), ExtResource("66_lh184"), ExtResource("67_guek4"), ExtResource("68_b3wse"), ExtResource("69_cd84a"), ExtResource("70_dq4gt"), ExtResource("71_fgsh0"), ExtResource("72_vuidb"), ExtResource("73_2pbmp"), ExtResource("74_b5221"), ExtResource("75_psoe1"), ExtResource("76_mdwep"), ExtResource("77_xav5t"), ExtResource("78_omepy"), ExtResource("79_kev4f"), ExtResource("80_v5lv4"), ExtResource("81_h2y5e"), ExtResource("82_wihyy"), ExtResource("83_pp62w"), ExtResource("84_wj0ie"), ExtResource("85_r6afy"), ExtResource("86_83j71")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:pixel_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.42815852, 0.55131704),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0025, 0.0025, 0.007500000000000001]
+}
+
+[sub_resource type="Animation" id="Animation_trsi8"]
+resource_name = "TakeHit"
+step = 0.083333336
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.08027972, 0.16370766, 0.2455615, 0.34000823, 0.4171397, 0.50529003, 0.5839956, 0.66742355, 0.74770325, 0.84215003, 0.9098368),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("87_h2y5e"), ExtResource("88_wihyy"), ExtResource("89_pp62w"), ExtResource("90_wj0ie"), ExtResource("91_r6afy"), ExtResource("92_83j71"), ExtResource("93_ciy6n"), ExtResource("94_o35oc"), ExtResource("95_rt25r"), ExtResource("96_6ojxj"), ExtResource("97_60x4o"), ExtResource("98_d2sm6")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kmuhc"]
+_data = {
+&"Attack": SubResource("Animation_bnw5o"),
+&"Death": SubResource("Animation_vqx8j"),
+&"Idle": SubResource("Animation_7a3bx"),
+&"Move": SubResource("Animation_3cwg6"),
+&"RESET": SubResource("Animation_bxjv2"),
+&"TakeHit": SubResource("Animation_trsi8")
+}
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mnpqr"]
+height = 1.310852
+
+[node name="Enemy" type="CharacterBody3D" node_paths=PackedStringArray("AnimationPlayer", "Sprite", "StateMachine")]
+script = ExtResource("1_wj0ie")
+AnimationPlayer = NodePath("AnimationPlayer")
+Sprite = NodePath("Sprite3D")
+StateMachine = NodePath("StateMachine")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+pixel_size = 0.0025
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_kmuhc")
+}
+autoplay = "Idle"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07608032, 0)
+shape = SubResource("CapsuleShape3D_mnpqr")
+
+[node name="StateMachine" parent="." node_paths=PackedStringArray("currentState", "states") instance=ExtResource("99_wihyy")]
+currentState = NodePath("IdleState")
+states = [NodePath("IdleState")]
+
+[node name="IdleState" type="Node" parent="StateMachine"]
+script = ExtResource("100_pp62w")

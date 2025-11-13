@@ -1,11 +1,11 @@
 using Godot;
 using System;
 
-public partial class PlayerIdleState : PlayerState
+public partial class PlayerIdleState : CharacterState
 {
 	public override void _PhysicsProcess(double delta)
 	{
-		if (characterNode.inputDirection != Vector2.Zero)
+		if (characterNode.direction != Vector2.Zero)
 		{
 			characterNode.StateMachine.SwitchState<PlayerMoveState>();
 		}

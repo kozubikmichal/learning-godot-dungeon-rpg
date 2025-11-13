@@ -1,17 +1,17 @@
 using Godot;
 using System;
 
-public partial class PlayerMoveState : PlayerState
+public partial class PlayerMoveState : CharacterState
 {
 	public override void _PhysicsProcess(double delta)
 	{
-		if (characterNode.inputDirection == Vector2.Zero)
+		if (characterNode.direction == Vector2.Zero)
 		{
 			characterNode.StateMachine.SwitchState<PlayerIdleState>();
 			return;
 		}
 
-		characterNode.Velocity = new(characterNode.inputDirection.X, 0, characterNode.inputDirection.Y);
+		characterNode.Velocity = new(characterNode.direction.X, 0, characterNode.direction.Y);
 		characterNode.Velocity *= characterNode.MovementSpeed;
 
 		characterNode.Flip();

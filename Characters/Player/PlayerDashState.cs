@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class PlayerDashState : PlayerState
+public partial class PlayerDashState : CharacterState
 {
 	[Export] private Timer dashTimer;
 	[Export(PropertyHint.Range, "0,20,1")] private float speed = 10;
@@ -21,7 +21,7 @@ public partial class PlayerDashState : PlayerState
 	protected override void OnStateEnter()
 	{
 		characterNode.AnimationPlayer.Play(Constants.ANIMATION_DASH);
-		characterNode.Velocity = new(characterNode.inputDirection.X, 0, characterNode.inputDirection.Y);
+		characterNode.Velocity = new(characterNode.direction.X, 0, characterNode.direction.Y);
 
 		if (characterNode.Velocity == Vector3.Zero)
 		{
