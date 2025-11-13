@@ -7,20 +7,20 @@ public partial class PlayerIdleState : PlayerState
 	{
 		if (characterNode.inputDirection != Vector2.Zero)
 		{
-			characterNode.stateMachine.SwitchState<PlayerMoveState>();
+			characterNode.StateMachine.SwitchState<PlayerMoveState>();
 		}
 	}
 
 	protected override void OnStateEnter()
 	{
-		characterNode.animationPlayer.Play(Constants.ANIMATION_IDLE);
+		characterNode.AnimationPlayer.Play(Constants.ANIMATION_IDLE);
 	}
 
 	public override void _Input(InputEvent @event)
 	{
 		if (Input.IsActionJustPressed("Dash"))
 		{
-			characterNode.stateMachine.SwitchState<PlayerDashState>();
+			characterNode.StateMachine.SwitchState<PlayerDashState>();
 		}
 	}
 }

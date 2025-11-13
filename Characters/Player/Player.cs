@@ -3,12 +3,12 @@ using System;
 
 public partial class Player : CharacterBody3D
 {
-	[Export] public float MovementSpeed = Constants.DEFAULT_PLAYER_MOVEMENT_SPEED;
+	[Export(PropertyHint.Range, "0,20,1")] public float MovementSpeed { get; private set; } = Constants.DEFAULT_PLAYER_MOVEMENT_SPEED;
 
 	[ExportGroup("Required Nodes")]
-	[Export] public AnimationPlayer animationPlayer;
-	[Export] public Sprite3D _sprite;
-	[Export] public StateMachine stateMachine;
+	[Export] public AnimationPlayer AnimationPlayer { get; private set; }
+	[Export] public Sprite3D Sprite { get; private set; }
+	[Export] public StateMachine StateMachine { get; private set; }
 
 	public Vector2 inputDirection = Vector2.Zero;
 
@@ -30,9 +30,9 @@ public partial class Player : CharacterBody3D
 	{
 		if (Velocity.X != 0)
 		{
-			_sprite.FlipH = Velocity.X < 0;
+			Sprite.FlipH = Velocity.X < 0;
 		}
 	}
 
-	public bool IsFlipped { get { return _sprite.FlipH; } }
+	public bool IsFlipped { get { return Sprite.FlipH; } }
 }

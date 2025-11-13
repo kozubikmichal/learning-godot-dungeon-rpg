@@ -4,7 +4,7 @@ using System;
 public partial class PlayerDashState : PlayerState
 {
 	[Export] private Timer dashTimer;
-	[Export] private float speed = 10;
+	[Export(PropertyHint.Range, "0,20,1")] private float speed = 10;
 
 	public override void _Ready()
 	{
@@ -20,7 +20,7 @@ public partial class PlayerDashState : PlayerState
 
 	protected override void OnStateEnter()
 	{
-		characterNode.animationPlayer.Play(Constants.ANIMATION_DASH);
+		characterNode.AnimationPlayer.Play(Constants.ANIMATION_DASH);
 		characterNode.Velocity = new(characterNode.inputDirection.X, 0, characterNode.inputDirection.Y);
 
 		if (characterNode.Velocity == Vector3.Zero)
@@ -35,6 +35,6 @@ public partial class PlayerDashState : PlayerState
 	private void OnDashTimerTimeout()
 	{
 		characterNode.Velocity = Vector3.Zero;
-		characterNode.stateMachine.SwitchState<PlayerIdleState>();
+		characterNode.StateMachine.SwitchState<PlayerIdleState>();
 	}
 }
