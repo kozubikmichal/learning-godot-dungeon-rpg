@@ -11,6 +11,10 @@ public partial class Character : CharacterBody3D
 
 	[Export(PropertyHint.Range, "0,20,1")] public float MovementSpeed { get; private set; } = Constants.DEFAULT_PLAYER_MOVEMENT_SPEED;
 
+	[ExportGroup("AI Nodes")]
+	[Export] public Path3D PathNode { get; private set; }
+	[Export] public NavigationAgent3D NavigationAgent { get; private set; }
+
 	public Vector2 direction = Vector2.Zero;
 
 	public void Flip()

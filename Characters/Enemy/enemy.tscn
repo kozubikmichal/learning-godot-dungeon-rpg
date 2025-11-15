@@ -1,4 +1,4 @@
-[gd_scene load_steps=110 format=3 uid="uid://8gsbej48mvpr"]
+[gd_scene load_steps=112 format=3 uid="uid://8gsbej48mvpr"]
 
 [ext_resource type="Texture2D" uid="uid://ivcm5rmh2v2b" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_000.png" id="1_mnpqr"]
 [ext_resource type="Script" uid="uid://c2qhdhu7uy7bc" path="res://Characters/Enemy/Enemy.cs" id="1_wj0ie"]
@@ -101,6 +101,8 @@
 [ext_resource type="Texture2D" uid="uid://cur5qj0njjq5e" path="res://Assets/Sprites/Characters/Enemy Knight/TakeHit/0_Demons_of_Darkness_Hurt_011.png" id="98_d2sm6"]
 [ext_resource type="PackedScene" uid="uid://b3ih4cyuk6jcw" path="res://Characters/state_machine.tscn" id="99_wihyy"]
 [ext_resource type="Script" uid="uid://b7rdfev61ecj0" path="res://Characters/Enemy/EnemyIdleState.cs" id="100_pp62w"]
+[ext_resource type="Script" uid="uid://cflxd7qsfvbak" path="res://Characters/Enemy/EnemyReturnState.cs" id="102_r6afy"]
+[ext_resource type="Script" uid="uid://cwyhi2ib5x7ud" path="res://Characters/Enemy/EnemyPatrolState.cs" id="103_83j71"]
 
 [sub_resource type="Animation" id="Animation_7a3bx"]
 resource_name = "Idle"
@@ -236,11 +238,12 @@ _data = {
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mnpqr"]
 height = 1.310852
 
-[node name="Enemy" type="CharacterBody3D" node_paths=PackedStringArray("AnimationPlayer", "Sprite", "StateMachine")]
+[node name="Enemy" type="CharacterBody3D" node_paths=PackedStringArray("AnimationPlayer", "Sprite", "StateMachine", "NavigationAgent")]
 script = ExtResource("1_wj0ie")
 AnimationPlayer = NodePath("AnimationPlayer")
 Sprite = NodePath("Sprite3D")
 StateMachine = NodePath("StateMachine")
+NavigationAgent = NodePath("NavigationAgent3D")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 pixel_size = 0.0025
@@ -257,7 +260,20 @@ shape = SubResource("CapsuleShape3D_mnpqr")
 
 [node name="StateMachine" parent="." node_paths=PackedStringArray("currentState", "states") instance=ExtResource("99_wihyy")]
 currentState = NodePath("IdleState")
-states = [NodePath("IdleState")]
+states = [NodePath("IdleState"), NodePath("ReturnState"), NodePath("PatrolState")]
 
 [node name="IdleState" type="Node" parent="StateMachine"]
 script = ExtResource("100_pp62w")
+
+[node name="ReturnState" type="Node" parent="StateMachine"]
+script = ExtResource("102_r6afy")
+
+[node name="PatrolState" type="Node" parent="StateMachine" node_paths=PackedStringArray("idleTimer")]
+script = ExtResource("103_83j71")
+idleTimer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="StateMachine/PatrolState"]
+one_shot = true
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+debug_enabled = true
