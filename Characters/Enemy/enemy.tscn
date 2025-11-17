@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=3 uid="uid://8gsbej48mvpr"]
+[gd_scene load_steps=116 format=3 uid="uid://8gsbej48mvpr"]
 
 [ext_resource type="Texture2D" uid="uid://ivcm5rmh2v2b" path="res://Assets/Sprites/Characters/Enemy Knight/Idle/0_Demons_of_Darkness_Idle_000.png" id="1_mnpqr"]
 [ext_resource type="Script" uid="uid://c2qhdhu7uy7bc" path="res://Characters/Enemy/Enemy.cs" id="1_wj0ie"]
@@ -103,6 +103,8 @@
 [ext_resource type="Script" uid="uid://b7rdfev61ecj0" path="res://Characters/Enemy/EnemyIdleState.cs" id="100_pp62w"]
 [ext_resource type="Script" uid="uid://cflxd7qsfvbak" path="res://Characters/Enemy/EnemyReturnState.cs" id="102_r6afy"]
 [ext_resource type="Script" uid="uid://cwyhi2ib5x7ud" path="res://Characters/Enemy/EnemyPatrolState.cs" id="103_83j71"]
+[ext_resource type="Script" uid="uid://el4t2gruq62y" path="res://Characters/Enemy/EnemyChaseState.cs" id="104_ciy6n"]
+[ext_resource type="Script" uid="uid://bonppltahxgqm" path="res://Characters/Enemy/EnemyAttackState.cs" id="105_o35oc"]
 
 [sub_resource type="Animation" id="Animation_7a3bx"]
 resource_name = "Idle"
@@ -238,12 +240,22 @@ _data = {
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mnpqr"]
 height = 1.310852
 
-[node name="Enemy" type="CharacterBody3D" node_paths=PackedStringArray("AnimationPlayer", "Sprite", "StateMachine", "NavigationAgent")]
+[sub_resource type="SphereShape3D" id="SphereShape3D_83j71"]
+radius = 6.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rt25r"]
+radius = 1.4
+
+[node name="Enemy" type="CharacterBody3D" node_paths=PackedStringArray("AnimationPlayer", "Sprite", "StateMachine", "NavigationAgent", "ChaseArea", "AttackArea")]
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_wj0ie")
 AnimationPlayer = NodePath("AnimationPlayer")
 Sprite = NodePath("Sprite3D")
 StateMachine = NodePath("StateMachine")
 NavigationAgent = NodePath("NavigationAgent3D")
+ChaseArea = NodePath("ChaseArea")
+AttackArea = NodePath("AttackArea")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 pixel_size = 0.0025
@@ -260,7 +272,7 @@ shape = SubResource("CapsuleShape3D_mnpqr")
 
 [node name="StateMachine" parent="." node_paths=PackedStringArray("currentState", "states") instance=ExtResource("99_wihyy")]
 currentState = NodePath("IdleState")
-states = [NodePath("IdleState"), NodePath("ReturnState"), NodePath("PatrolState")]
+states = [NodePath("IdleState"), NodePath("ReturnState"), NodePath("PatrolState"), NodePath("ChaseState"), NodePath("AttackState")]
 
 [node name="IdleState" type="Node" parent="StateMachine"]
 script = ExtResource("100_pp62w")
@@ -275,5 +287,35 @@ idleTimer = NodePath("Timer")
 [node name="Timer" type="Timer" parent="StateMachine/PatrolState"]
 one_shot = true
 
+[node name="ChaseState" type="Node" parent="StateMachine" node_paths=PackedStringArray("chaseTimer")]
+script = ExtResource("104_ciy6n")
+chaseTimer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="StateMachine/ChaseState"]
+wait_time = 0.5
+autostart = true
+
+[node name="AttackState" type="Node" parent="StateMachine" node_paths=PackedStringArray("attackTimer")]
+script = ExtResource("105_o35oc")
+attackTimer = NodePath("AttackTimer")
+
+[node name="AttackTimer" type="Timer" parent="StateMachine/AttackState"]
+
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 debug_enabled = true
+
+[node name="ChaseArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChaseArea"]
+shape = SubResource("SphereShape3D_83j71")
+debug_color = Color(0.94505113, 0.23673281, 5.7756904e-07, 0.41960785)
+
+[node name="AttackArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackArea"]
+shape = SubResource("SphereShape3D_rt25r")
+debug_color = Color(0.59622973, 0.3765444, 0.9922412, 0.41960785)

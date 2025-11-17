@@ -24,11 +24,13 @@ public partial class EnemyPatrolState : EnemyState
 		characterNode.NavigationAgent.TargetPosition = destination;
 
 		characterNode.NavigationAgent.NavigationFinished += HandleNavigationFinished;
+		characterNode.ChaseArea.BodyEntered += HandleChaseAreaBodyEntered;
 	}
 
 	protected override void OnStateExit()
 	{
 		characterNode.NavigationAgent.NavigationFinished -= HandleNavigationFinished;
+		characterNode.ChaseArea.BodyEntered -= HandleChaseAreaBodyEntered;
 	}
 
 	public override void _PhysicsProcess(double delta)

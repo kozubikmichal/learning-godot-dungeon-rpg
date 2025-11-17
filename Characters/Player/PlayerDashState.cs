@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class PlayerDashState : CharacterState
+public partial class PlayerDashState : PlayerState
 {
 	[Export] private Timer dashTimer;
 	[Export(PropertyHint.Range, "0,20,1")] private float speed = 10;

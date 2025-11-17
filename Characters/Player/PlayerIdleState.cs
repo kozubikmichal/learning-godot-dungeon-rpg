@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class PlayerIdleState : CharacterState
+public partial class PlayerIdleState : PlayerState
 {
 	public override void _PhysicsProcess(double delta)
 	{
@@ -18,9 +18,7 @@ public partial class PlayerIdleState : CharacterState
 
 	public override void _Input(InputEvent @event)
 	{
-		if (Input.IsActionJustPressed("Dash"))
-		{
-			characterNode.StateMachine.SwitchState<PlayerDashState>();
-		}
+		CheckForAttackInput();
+		CheckForDashInput();
 	}
 }
