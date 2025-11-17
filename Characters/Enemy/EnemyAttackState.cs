@@ -4,28 +4,44 @@ using System;
 public partial class EnemyAttackState : EnemyState
 {
 	[Export] private Timer attackTimer;
+
+	private bool isPlayerNearby = false;
+
+	public override void _Ready()
+	{
+		base._Ready();
+		attackTimer.Timeout += HandleAttackTimerTimeout;
+	}
+
 	protected override void OnStateEnter()
 	{
+		isPlayerNearby = true;
 		characterNode.AttackArea.BodyExited += HandleAttackAreaBodyExited;
 		characterNode.AnimationPlayer.Play(Constants.ANIMATION_ATTACK);
 
 		attackTimer.Start();
-		attackTimer.Timeout += HandleAttackTimerTimeout;
 	}
 
 	protected override void OnStateExit()
 	{
 		characterNode.AttackArea.BodyExited -= HandleAttackAreaBodyExited;
-		attackTimer.Timeout -= HandleAttackTimerTimeout;
+		attackTimer.Stop();
 	}
 
 	private void HandleAttackAreaBodyExited(Node body)
 	{
-		characterNode.StateMachine.SwitchState<EnemyChaseState>();
+		isPlayerNearby = false;
 	}
 
 	private void HandleAttackTimerTimeout()
 	{
-		characterNode.AnimationPlayer.Play(Constants.ANIMATION_ATTACK);
+		if (isPlayerNearby)
+		{
+			characterNode.AnimationPlayer.Play(Constants.ANIMATION_ATTACK);
+		}
+		else
+		{
+			characterNode.StateMachine.SwitchState<EnemyChaseState>();
+		}
 	}
 }

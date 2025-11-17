@@ -246,13 +246,14 @@ radius = 6.0
 [sub_resource type="SphereShape3D" id="SphereShape3D_rt25r"]
 radius = 1.4
 
-[node name="Enemy" type="CharacterBody3D" node_paths=PackedStringArray("AnimationPlayer", "Sprite", "StateMachine", "NavigationAgent", "ChaseArea", "AttackArea")]
+[node name="Enemy" type="CharacterBody3D" node_paths=PackedStringArray("AnimationPlayer", "Sprite", "StateMachine", "Hurtbox", "NavigationAgent", "ChaseArea", "AttackArea")]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_wj0ie")
 AnimationPlayer = NodePath("AnimationPlayer")
 Sprite = NodePath("Sprite3D")
 StateMachine = NodePath("StateMachine")
+Hurtbox = NodePath("Hurtbox")
 NavigationAgent = NodePath("NavigationAgent3D")
 ChaseArea = NodePath("ChaseArea")
 AttackArea = NodePath("AttackArea")
@@ -302,7 +303,6 @@ attackTimer = NodePath("AttackTimer")
 [node name="AttackTimer" type="Timer" parent="StateMachine/AttackState"]
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-debug_enabled = true
 
 [node name="ChaseArea" type="Area3D" parent="."]
 collision_layer = 0
@@ -319,3 +319,11 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AttackArea"]
 shape = SubResource("SphereShape3D_rt25r")
 debug_color = Color(0.59622973, 0.3765444, 0.9922412, 0.41960785)
+
+[node name="Hurtbox" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07704331, 0)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox"]
+shape = SubResource("CapsuleShape3D_mnpqr")

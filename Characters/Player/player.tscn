@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://d1edt3v21kw2v"]
+[gd_scene load_steps=76 format=3 uid="uid://d1edt3v21kw2v"]
 
 [ext_resource type="Script" uid="uid://d1ahi1a54yo4b" path="res://Characters/Player/Player.cs" id="1_8hpgr"]
 [ext_resource type="Texture2D" uid="uid://dwdo62x12wrri" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_000.png" id="1_blwrb"]
@@ -177,6 +177,9 @@ _data = {
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qysuy"]
 height = 1.4477539
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_3snk1"]
+size = Vector3(0.5, 0.5, 0.5)
+
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("AnimationPlayer", "Sprite", "StateMachine")]
 collision_layer = 2
 collision_mask = 5
@@ -227,3 +230,11 @@ one_shot = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0039200187, 0)
 shape = SubResource("CapsuleShape3D_qysuy")
+
+[node name="Hitbox" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8397615, 0, 0)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+shape = SubResource("BoxShape3D_3snk1")
