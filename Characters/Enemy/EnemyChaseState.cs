@@ -12,11 +12,16 @@ public partial class EnemyChaseState : EnemyState
 	{
 		characterNode.AnimationPlayer.Play(Constants.ANIMATION_MOVE);
 
-		target = characterNode.ChaseArea.GetOverlappingBodies().First() as CharacterBody3D;
+		target = characterNode.ChaseArea.GetOverlappingBodies().FirstOrDefault() as CharacterBody3D;
 
 		chaseTimer.Timeout += HandleChaseTimerTimeout;
 		characterNode.ChaseArea.BodyExited += HandleChaseAreaBodyExited;
 		characterNode.AttackArea.BodyEntered += HandleAttackAreaBodyEntered;
+
+		if (target == null)
+		{
+			characterNode.StateMachine.SwitchState<EnemyReturnState>();
+		}
 	}
 
 	protected override void OnStateExit()

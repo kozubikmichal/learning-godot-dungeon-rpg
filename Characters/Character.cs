@@ -1,8 +1,10 @@
 using Godot;
 using System;
+using System.Linq;
 
 public partial class Character : CharacterBody3D
 {
+	[Export] private StatResource[] stats;
 
 	[ExportGroup("Required Nodes")]
 	[Export] public AnimationPlayer AnimationPlayer { get; private set; }
@@ -11,6 +13,7 @@ public partial class Character : CharacterBody3D
 
 	[Export(PropertyHint.Range, "0,20,1")] public float MovementSpeed { get; private set; } = Constants.DEFAULT_PLAYER_MOVEMENT_SPEED;
 	[Export] public Area3D Hurtbox { get; private set; }
+	[Export] public Area3D Hitbox { get; private set; }
 
 	[ExportGroup("AI Nodes")]
 	[Export] public Path3D PathNode { get; private set; }
@@ -39,6 +42,22 @@ public partial class Character : CharacterBody3D
 
 	private void HandleHurtboxAreaEntered(Area3D area)
 	{
-		GD.Print($"hurtbox hit by {area.Name}");
+		StatResource health = GetStatResource(Stat.Health);
+
+		Character player = area.GetOwner<Character>();
+
+		health.StatValue -= player.GetStatResource(Stat.Strength).StatValue;
+
+		GD.Print($"{this.Name} took damage! Current Health: {health.StatValue}");
+	}
+
+	public StatResource GetStatResource(Stat stat)
+	{
+		return stats.Where(s => s.StatType == stat).FirstOrDefault();
+	}
+
+	public void ToggleHitbox(bool enabled)
+	{
+		Hitbox.GetChild<CollisionShape3D>(0).Disabled = !enabled;
 	}
 }

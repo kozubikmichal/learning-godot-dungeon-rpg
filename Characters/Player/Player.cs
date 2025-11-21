@@ -5,6 +5,7 @@ public partial class Player : Character
 {
 	public override void _Ready()
 	{
+		base._Ready();
 	}
 
 	public override void _PhysicsProcess(double delta)

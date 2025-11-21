@@ -29,11 +29,21 @@ public partial class PlayerAttackState : PlayerState
 	private void HandleAnimationFinished(StringName animationName)
 	{
 		comboCounter = Mathf.Wrap(comboCounter + 1, 1, maxComboCount + 1);
+		characterNode.ToggleHitbox(false);
 		characterNode.StateMachine.SwitchState<PlayerIdleState>();
 	}
 
 	private void HandleComboResetTimeout()
 	{
 		comboCounter = 1;
+	}
+
+	private void PerformHit()
+	{
+		Vector3 newPosition = characterNode.IsFlipped ? Vector3.Left : Vector3.Right;
+		var distanceMultiplier = 0.75f;
+
+		characterNode.Hitbox.Position = newPosition * distanceMultiplier;
+		characterNode.ToggleHitbox(true);
 	}
 }
