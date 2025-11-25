@@ -5,6 +5,7 @@ public partial class EnemyIdleState : EnemyState
 {
 	protected override void OnStateEnter()
 	{
+		characterNode.DebugLog($"Enter Idle State");
 		characterNode.AnimationPlayer.Play(Constants.ANIMATION_IDLE);
 		characterNode.ChaseArea.BodyEntered += HandleChaseAreaBodyEntered;
 	}

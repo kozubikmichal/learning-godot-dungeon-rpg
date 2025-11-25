@@ -24,6 +24,8 @@ public abstract partial class EnemyState : CharacterState
 		characterNode.NavigationAgent.GetNextPathPosition();
 		characterNode.Velocity = characterNode.GlobalPosition.DirectionTo(destination);
 
+		characterNode.DebugLog($"Moving towards {destination} with velocity {characterNode.Velocity} from position {characterNode.GlobalPosition}");
+
 		characterNode.MoveAndSlide();
 		characterNode.Flip();
 	}

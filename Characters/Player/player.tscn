@@ -1,10 +1,11 @@
-[gd_scene load_steps=96 format=3 uid="uid://d1edt3v21kw2v"]
+[gd_scene load_steps=95 format=3 uid="uid://d1edt3v21kw2v"]
 
 [ext_resource type="Script" uid="uid://d1ahi1a54yo4b" path="res://Characters/Player/Player.cs" id="1_8hpgr"]
 [ext_resource type="Texture2D" uid="uid://dwdo62x12wrri" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_000.png" id="1_blwrb"]
 [ext_resource type="Texture2D" uid="uid://bxa6s8e5pdvds" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_001.png" id="2_hvtal"]
-[ext_resource type="Script" uid="uid://cyho7t4bwc3x" path="res://Resources/StatResource.cs" id="2_kjbmj"]
+[ext_resource type="Resource" uid="uid://8sb1y8owur52" path="res://Resources/playerHealthStat.tres" id="2_n34ts"]
 [ext_resource type="Texture2D" uid="uid://dq2qgjt1x3wij" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_002.png" id="3_8fwmd"]
+[ext_resource type="Resource" uid="uid://mf0pmsc2q7h8" path="res://Resources/playerStrengthStat.tres" id="3_n34ts"]
 [ext_resource type="Texture2D" uid="uid://dcpkmeyb70tsc" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_003.png" id="4_jec2i"]
 [ext_resource type="Texture2D" uid="uid://db4ptt0lyaqqk" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_004.png" id="5_kpgn3"]
 [ext_resource type="Texture2D" uid="uid://dvd12m4l1tryn" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_005.png" id="6_6ip0i"]
@@ -84,82 +85,6 @@
 [ext_resource type="Texture2D" uid="uid://df24cxv7gsom3" path="res://Assets/Sprites/Characters/Player/Dying/Dying_014.png" id="77_62cg6"]
 [ext_resource type="Script" uid="uid://foe2uakf4axb" path="res://Characters/Player/PlayerDeathState.cs" id="83_we7wg"]
 
-[sub_resource type="Resource" id="Resource_1h52x"]
-script = ExtResource("2_kjbmj")
-StatValue = 100.0
-metadata/_custom_type_script = "uid://cyho7t4bwc3x"
-
-[sub_resource type="Resource" id="Resource_xrxj3"]
-script = ExtResource("2_kjbmj")
-StatType = 1
-StatValue = 3.0
-metadata/_custom_type_script = "uid://cyho7t4bwc3x"
-
-[sub_resource type="Animation" id="Animation_yvl8n"]
-resource_name = "Dash"
-step = 0.16666667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.16877973, 0.32843623, 0.5017776, 0.66751623, 0.82793295),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("32_qjn0b"), ExtResource("33_qysuy"), ExtResource("34_3q5ia"), ExtResource("35_f3npr"), ExtResource("36_n2l6n"), ExtResource("37_rjase")]
-}
-
-[sub_resource type="Animation" id="Animation_vqjgt"]
-resource_name = "Idle"
-loop_mode = 1
-step = 0.055555556
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.055652015, 0.114933506, 0.16816586, 0.22381788, 0.2800748, 0.33572683, 0.39198375, 0.44521612, 0.501473, 0.55712503, 0.61277705, 0.6684291, 0.7222664, 0.77791834, 0.83538514, 0.8910371, 0.947899),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("1_blwrb"), ExtResource("2_hvtal"), ExtResource("3_8fwmd"), ExtResource("4_jec2i"), ExtResource("5_kpgn3"), ExtResource("6_6ip0i"), ExtResource("7_5jopl"), ExtResource("8_yee8r"), ExtResource("9_v0k0y"), ExtResource("10_s0xdn"), ExtResource("11_atvgk"), ExtResource("12_bkulq"), ExtResource("13_e3hdo"), ExtResource("14_8hpgr"), ExtResource("15_8kxwp"), ExtResource("16_12h2v"), ExtResource("17_yhbe1"), ExtResource("18_6pscn")]
-}
-
-[sub_resource type="Animation" id="Animation_3q5ia"]
-resource_name = "Move"
-loop_mode = 1
-step = 0.083333336
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0859104, 0.16877973, 0.24936825, 0.33527866, 0.41814798, 0.5010173, 0.5869277, 0.66903675, 0.7511458, 0.83629596, 0.9168845),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("19_e3hdo"), ExtResource("20_8hpgr"), ExtResource("21_8kxwp"), ExtResource("22_12h2v"), ExtResource("23_yhbe1"), ExtResource("24_6pscn"), ExtResource("25_vqjgt"), ExtResource("26_8rp7i"), ExtResource("27_2ichn"), ExtResource("28_d70mr"), ExtResource("29_qjn0b"), ExtResource("30_qysuy")]
-}
-
-[sub_resource type="Animation" id="Animation_8rp7i"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("1_blwrb")]
-}
-
 [sub_resource type="Animation" id="Animation_hrv8i"]
 resource_name = "Attack1"
 step = 0.083333336
@@ -220,6 +145,22 @@ tracks/1/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_yvl8n"]
+resource_name = "Dash"
+step = 0.16666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16877973, 0.32843623, 0.5017776, 0.66751623, 0.82793295),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("32_qjn0b"), ExtResource("33_qysuy"), ExtResource("34_3q5ia"), ExtResource("35_f3npr"), ExtResource("36_n2l6n"), ExtResource("37_rjase")]
+}
+
 [sub_resource type="Animation" id="Animation_fvi2t"]
 resource_name = "Death"
 step = 0.06666667
@@ -234,6 +175,55 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("63_mac3c"), ExtResource("64_we7wg"), ExtResource("65_n34ts"), ExtResource("66_bn5v0"), ExtResource("67_vxktf"), ExtResource("68_elxsa"), ExtResource("69_ycmvp"), ExtResource("70_vsgar"), ExtResource("71_gxw5c"), ExtResource("72_3d8qi"), ExtResource("73_8dpgu"), ExtResource("74_sil3o"), ExtResource("75_s24qw"), ExtResource("76_hkw46"), ExtResource("77_62cg6")]
+}
+
+[sub_resource type="Animation" id="Animation_vqjgt"]
+resource_name = "Idle"
+loop_mode = 1
+step = 0.055555556
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.055652015, 0.114933506, 0.16816586, 0.22381788, 0.2800748, 0.33572683, 0.39198375, 0.44521612, 0.501473, 0.55712503, 0.61277705, 0.6684291, 0.7222664, 0.77791834, 0.83538514, 0.8910371, 0.947899),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_blwrb"), ExtResource("2_hvtal"), ExtResource("3_8fwmd"), ExtResource("4_jec2i"), ExtResource("5_kpgn3"), ExtResource("6_6ip0i"), ExtResource("7_5jopl"), ExtResource("8_yee8r"), ExtResource("9_v0k0y"), ExtResource("10_s0xdn"), ExtResource("11_atvgk"), ExtResource("12_bkulq"), ExtResource("13_e3hdo"), ExtResource("14_8hpgr"), ExtResource("15_8kxwp"), ExtResource("16_12h2v"), ExtResource("17_yhbe1"), ExtResource("18_6pscn")]
+}
+
+[sub_resource type="Animation" id="Animation_3q5ia"]
+resource_name = "Move"
+loop_mode = 1
+step = 0.083333336
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0859104, 0.16877973, 0.24936825, 0.33527866, 0.41814798, 0.5010173, 0.5869277, 0.66903675, 0.7511458, 0.83629596, 0.9168845),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("19_e3hdo"), ExtResource("20_8hpgr"), ExtResource("21_8kxwp"), ExtResource("22_12h2v"), ExtResource("23_yhbe1"), ExtResource("24_6pscn"), ExtResource("25_vqjgt"), ExtResource("26_8rp7i"), ExtResource("27_2ichn"), ExtResource("28_d70mr"), ExtResource("29_qjn0b"), ExtResource("30_qysuy")]
+}
+
+[sub_resource type="Animation" id="Animation_8rp7i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_blwrb")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2ichn"]
@@ -259,7 +249,7 @@ collision_mask = 5
 floor_max_angle = 1.553343
 floor_snap_length = 0.2
 script = ExtResource("1_8hpgr")
-stats = Array[Object]([SubResource("Resource_1h52x"), SubResource("Resource_xrxj3")])
+stats = Array[Object]([ExtResource("2_n34ts"), ExtResource("3_n34ts")])
 AnimationPlayer = NodePath("AnimationPlayer")
 Sprite = NodePath("Sprite3D")
 StateMachine = NodePath("StateMachine")

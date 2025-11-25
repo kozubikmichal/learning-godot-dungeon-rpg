@@ -4,6 +4,7 @@ using System.Linq;
 
 public partial class Character : CharacterBody3D
 {
+	[Export] public bool DebugMe = false;
 	[Export] private StatResource[] stats;
 
 	[ExportGroup("Required Nodes")]
@@ -57,5 +58,13 @@ public partial class Character : CharacterBody3D
 	public void ToggleHitbox(bool enabled)
 	{
 		Hitbox.GetChild<CollisionShape3D>(0).Disabled = !enabled;
+	}
+
+	public void DebugLog(string message)
+	{
+		if (DebugMe)
+		{
+			GD.PrintS(message);
+		}
 	}
 }

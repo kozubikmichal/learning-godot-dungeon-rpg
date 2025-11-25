@@ -17,6 +17,7 @@ public partial class EnemyPatrolState : EnemyState
 
 	protected override void OnStateEnter()
 	{
+		characterNode.DebugLog($"Enter Patrol State");
 		characterNode.AnimationPlayer.Play(Constants.ANIMATION_MOVE);
 		pointIndex = 1;
 
@@ -35,6 +36,7 @@ public partial class EnemyPatrolState : EnemyState
 
 	public override void _PhysicsProcess(double delta)
 	{
+		characterNode.DebugLog($"Patrol State: Moving to Point {pointIndex} at {destination}");
 		if (!idleTimer.IsStopped())
 		{
 			return;

@@ -18,6 +18,7 @@ public partial class EnemyAttackState : EnemyState
 
 	protected override void OnStateEnter()
 	{
+		characterNode.DebugLog($"Enter Attack State");
 		isPlayerNearby = true;
 		characterNode.AttackArea.BodyExited += HandleAttackAreaBodyExited;
 		characterNode.AnimationPlayer.Play(Constants.ANIMATION_ATTACK);

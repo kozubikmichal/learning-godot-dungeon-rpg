@@ -10,6 +10,7 @@ public partial class EnemyReturnState : EnemyState
 
 	override protected void OnStateEnter()
 	{
+		characterNode.DebugLog($"Enter Return State");
 		destination = GetPointGlobalPosition(0);
 		characterNode.AnimationPlayer.Play(Constants.ANIMATION_MOVE);
 		characterNode.NavigationAgent.TargetPosition = destination;

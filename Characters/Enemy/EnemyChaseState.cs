@@ -10,6 +10,7 @@ public partial class EnemyChaseState : EnemyState
 
 	protected override void OnStateEnter()
 	{
+		characterNode.DebugLog($"Enter Chase State");
 		characterNode.AnimationPlayer.Play(Constants.ANIMATION_MOVE);
 
 		target = characterNode.ChaseArea.GetOverlappingBodies().FirstOrDefault() as CharacterBody3D;
